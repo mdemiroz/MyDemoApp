@@ -9,7 +9,7 @@ import java.util.Map;
 
 import spark.ModelAndView;
 import spark.template.mustache.MustacheTemplateEngine;
-
+}
 public class App
 {
     public static boolean search(ArrayList<Integer> array, int e) {

@@ -56,9 +56,11 @@ public class App{
 
     }
 
-    public static boolean counter(ArrayList<Integer> array,int e,int count){//search ve 2 parametreliydi..
+    public static boolean counter(ArrayList<Integer> array,int e,int q){//search ve 2 parametreliydi..
 
       System.out.println("inside search");
+
+	 int count = 0 ;
 
       if (array == null)
 		return false;
@@ -67,7 +69,7 @@ public class App{
         if (elt == e)
 		count ++ ;
 
-	 if(count == e)
+	 if(count == q)
 		return true;
 
       return false;

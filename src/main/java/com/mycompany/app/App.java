@@ -1,28 +1,27 @@
 package com.mycompany.app;
 
 import static spark.Spark.*;
-
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
 import spark.ModelAndView;
 import spark.template.mustache.MustacheTemplateEngine;
 
-public class App
-{
-    public static boolean search(ArrayList<Integer> array, int e) {
+public class App{
+
+    public static boolean search(ArrayList<Integer> array, int e){
       System.out.println("inside search");
       if (array == null) return false;
 
-      for (int elt : array) {
+      for (int elt : array)
         if (elt == e) return true;
-      }
+
       return false;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
+
         port(getHerokuAssignedPort());
 
         get("/", (req, res) -> "Hello, World");
@@ -35,13 +34,14 @@ public class App
           java.util.Scanner sc1 = new java.util.Scanner(input1);
           sc1.useDelimiter("[;\r\n]+");
           java.util.ArrayList<Integer> inputList = new java.util.ArrayList<>();
-          while (sc1.hasNext())
-          {
+          while (sc1.hasNext()){
+
             int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
             inputList.add(value);
-          }
-          System.out.println(inputList);
 
+          }
+
+          System.out.println(inputList);
 
           String input2 = req.queryParams("input2").replaceAll("\\s","");
           int input2AsInt = Integer.parseInt(input2);
@@ -50,7 +50,9 @@ public class App
 
          Map map = new HashMap();
           map.put("result", result);
+
           return new ModelAndView(map, "compute.mustache");
+
         }, new MustacheTemplateEngine());
 
 
@@ -61,14 +63,19 @@ public class App
               return new ModelAndView(map, "compute.mustache");
             },
             new MustacheTemplateEngine());
+
     }
 
-    static int getHerokuAssignedPort() {
+    static int getHerokuAssignedPort(){
+
         ProcessBuilder processBuilder = new ProcessBuilder();
-        if (processBuilder.environment().get("PORT") != null) {
+
+        if (processBuilder.environment().get("PORT") != null)
             return Integer.parseInt(processBuilder.environment().get("PORT"));
-        }
+
         return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+
     }
+
 }
 

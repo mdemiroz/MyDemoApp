@@ -36,12 +36,12 @@ public class AppTest extends TestCase{
        assertTrue(true);
     }
 
-    public void testThreeFound(){
+    public void ThreeTimesFound(){
        ArrayList<String> array = new ArrayList<>(Arrays.asList("1", "2", "3", "4", "4", "4"));
        assertTrue(new App().search(array,4,3));
     }
 
-    public void testThreeNotFound(){
+    public void ThreeTimesNotFound(){
        ArrayList<String> array = new ArrayList<>(Arrays.asList("1", "2", "3", "4", "4", "5"));
        assertFalse(new App().search(array,5,3));
     }

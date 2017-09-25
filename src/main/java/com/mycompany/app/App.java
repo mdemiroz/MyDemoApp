@@ -9,7 +9,7 @@ import spark.template.mustache.MustacheTemplateEngine;
 
 public class App
 {
-    public static boolean search(ArrayList<Integer> array, int e, int uc) {
+    public static boolean search(ArrayList<String> array, int e, int uc) {
 
 	 int count = 0 ;
 	 int j = 0 ;

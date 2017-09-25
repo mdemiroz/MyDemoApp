@@ -36,14 +36,14 @@ public class AppTest extends TestCase{
        assertTrue(true);
     }
 
-    public void testFound(){
-       ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-       assertTrue(new App().search(array,4));
+    public void testThreeFound(){
+       ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 4, 4));
+       assertTrue(new App().search(array,4,3,3));
     }
 
-    public void testNotFound(){
-       ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-       assertFalse(new App().search(array,5));
+    public void testThreeNotFound(){
+       ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 4, 5));
+       assertFalse(new App().search(array,5,3));
     }
 
     public void testEmptyArray(){

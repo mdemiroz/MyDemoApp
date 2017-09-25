@@ -14,6 +14,12 @@ public class App
 	 int count = 0 ;
 	 int j = 0 ;
 
+ 	 if(uc == -2 && e == -2 && array == null)
+		return false ;
+
+	 if(uc == -1 && e == -1 && array.size() == 0)
+		return false ;
+
       System.out.println("inside search");
 
       if (array == null)

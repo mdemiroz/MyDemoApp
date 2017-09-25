@@ -48,11 +48,11 @@ public class AppTest extends TestCase{
 
     public void testEmptyArray(){
        ArrayList<String> array = new ArrayList<>();
-       assertFalse(new App().search(array,1,1));
+       assertFalse(new App().search(array,-1,-1));
     }
 
     public void testNull(){
-       assertFalse(new App().search(null,1,1));
+       assertFalse(new App().search(null,-2,-2));
     }
 
 }

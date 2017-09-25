@@ -11,13 +11,17 @@ import spark.template.mustache.MustacheTemplateEngine;
 public class App{
 
     public static boolean search(ArrayList<Integer> array, int e){
+
       System.out.println("inside search");
-      if (array == null) return false;
+      if (array == null)
+		return false;
 
       for (int elt : array)
-        if (elt == e) return true;
+        if (elt == e)
+		return true;
 
       return false;
+
     }
 
     public static void main(String[] args){
@@ -48,7 +52,7 @@ public class App{
 
           boolean result = App.search(inputList, input2AsInt);
 
-         Map map = new HashMap();
+          Map map = new HashMap();
           map.put("result", result);
 
           return new ModelAndView(map, "compute.mustache");

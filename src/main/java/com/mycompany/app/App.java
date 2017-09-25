@@ -18,10 +18,11 @@ public class App
       if (array == null)
 		return false;
 
-      for (int elt : array)
-        if (elt == e)
+      for (int i = 0;i<array.length;i++){
+		int j = Integer.parseInt(array.get(i));
+        if (j == e)
 		count ++ ;
-      
+      }
 
 	 if(count == uc)
 		return true ;

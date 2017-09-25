@@ -2,10 +2,6 @@ package com.mycompany.app;
 
 import static spark.Spark.*;
 
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import java.util.*;
 
 import spark.ModelAndView;

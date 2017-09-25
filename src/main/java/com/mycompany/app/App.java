@@ -12,6 +12,7 @@ public class App
     public static boolean search(ArrayList<Integer> array, int e, int uc) {
 
 	 int count = 0 ;
+	 int j = 0 ;
 
       System.out.println("inside search");
 
@@ -19,9 +20,9 @@ public class App
 		return false;
 
       for (int i = 0;i<array.length;i++){
-		int j = Integer.parseInt(array.get(i));
-        if (j == e)
-		count ++ ;
+		j = Integer.parseInt(array.get(i));
+        	if (j == e)
+			count ++ ;
       }
 
 	 if(count == uc)

@@ -36,7 +36,7 @@ public class App{
           String input2 = req.queryParams("input2").replaceAll("\\s","");
           int input2AsInt = Integer.parseInt(input2);
 
-          boolean result = App.counter(inputList,input2AsInt,inputList.length/input2AsInt);
+          boolean result = App.counter(inputList,input2AsInt,inputList.length()/input2AsInt);
 
           Map map = new HashMap();
           map.put("result", result);

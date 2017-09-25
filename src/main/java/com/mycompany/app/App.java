@@ -10,20 +10,6 @@ import spark.template.mustache.MustacheTemplateEngine;
 
 public class App{
 
-    public static boolean search(ArrayList<Integer> array, int e){
-
-      System.out.println("inside search");
-      if (array == null)
-		return false;
-
-      for (int elt : array)
-        if (elt == e)
-		return true;
-
-      return false;
-
-    }
-
     public static void main(String[] args){
 
         port(getHerokuAssignedPort());
@@ -50,7 +36,7 @@ public class App{
           String input2 = req.queryParams("input2").replaceAll("\\s","");
           int input2AsInt = Integer.parseInt(input2);
 
-          boolean result = App.search(inputList, input2AsInt);
+          boolean result = App.count(inputList,input2AsInt,input2.length()/input2AsInt);
 
           Map map = new HashMap();
           map.put("result", result);
@@ -67,6 +53,24 @@ public class App{
               return new ModelAndView(map, "compute.mustache");
             },
             new MustacheTemplateEngine());
+
+    }
+
+    public static boolean counter(ArrayList<Integer> array,int e,int count){//search ve 2 parametreliydi..
+
+      System.out.println("inside search");
+
+      if (array == null)
+		return false;
+
+      for (int elt : array)
+        if (elt == e)
+		count ++ ;
+
+	 if(count == e)
+		return true;
+
+      return false;
 
     }
 
